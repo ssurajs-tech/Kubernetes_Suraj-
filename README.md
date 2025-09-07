@@ -1281,7 +1281,7 @@ spec:
 # kubectl delete -f pod.yml .
 
 Storage - 
-REMOVED
+
 Network Policies in Kubernetes
 ------------------------------
 Kubernetes NetworkPolicies are used to control communication between pods at the network level. 
