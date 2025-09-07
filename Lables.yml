@@ -1,0 +1,50 @@
+# Lables 
+
+# - Lables are the mechanism which you use to organise kubernetes objects.
+# - A lable is a key-value pair without any predefined meaning that can be attached to object.
+# - Lables are similar to tags in AWS or git where you use a name to quick refernence.
+# - So you are free to choose lables as you need to refer an environment which is used for DEV/TEST or PROD, refer a product group depta and deptb.
+# - Multiple lables can be added to a single object. 
+
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod
+  labels:
+    env: Dev
+    class: pods
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["/bin/bash","-c","while true;do echo 'Hello Suraj';sleep 5;done"]
+
+
+# kubectl apply -f pod5.myl
+
+# kubectl get pods
+
+# kubectl get pods --show-labels
+
+# --> Now if you want to add a lable to an existing pod
+
+# kubectl label pods pod-name myname=surajs
+
+# kubectl get pods --show-labels
+
+# --> Now, List the pods matching a lables
+
+# kubectl get pods -l env=Dev
+
+# --> Now, give a list, where 'Dev' is not present
+
+# kubectl get pods -l env!=Dev
+
+# --> Now, you want to delete pod using labels
+
+# kubectl delete pod -l env!=Dev
+
+# --> Display all the pods
+
+# Kubectl get pods

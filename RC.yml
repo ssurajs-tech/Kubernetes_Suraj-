@@ -1,0 +1,58 @@
+# Replica controller (Object)-
+# -----------------------------
+# - A replication controller is a object that enables you to easily create multiple pods, then make sure that number of pods always exist.
+# - If a pod is created using RC will be automatically replaced if they does crash, failed or terminated.
+# - RC is recommeded if you just want to make sure one pod is always running even after system reboot.
+# - you can run the RC with one replica and RC will make sure that the pod is always running.
+
+# lab-07]
+
+# RC.yml
+kind: ReplicationController                                                               
+# This defines to check the object of Replication type
+apiversion: v1
+metadata:
+  name: myreplica
+spec:
+  replicas: 2                                                                                              
+  # This element defines the desired number of pods
+  selector:                                                                                                              
+  # Tells the controller which pods to watch/belongs to this RC.
+    myname: surajs                                                                                 
+    # This must match the label
+  template:                                                                                           
+  # Templete elements defines to launch a new pod
+    metadata:
+      name: pod_name                                                                                 
+      labels:                                                                                                                 # Selector values need to match the labels values specified in the pod template.
+        myname: surajs
+    spec:
+      container:
+        - name: c00
+          image: ubuntu
+          command: ["/bin/bash","-C","while true;do echo 'hello suraj'; sleep 5 ; done"]
+
+
+# kubectl apply -f RC.yml
+# kubectl get rc
+# kubectl describe rc myreplica
+# kubectl get pods
+# kubectl delete -f pod pod_name
+# kubectl get pods
+# kubectl get rc
+# kubectl describe rc myreplica
+# kubectl get pods --show-lables
+# kubectl scale --replicas=8 rc -l myname=surajs
+# kubectl get rc
+# kubectl get pods
+# kubectl scale --relicas=1 rc -l myname=surajs
+# kubectl get rc
+# kubectl get pods
+# kubectl get pods --show-lables
+# kubectl delete -f myrc.yml
+
+# Replica set (Object)
+# --------------------
+# - Relica set is next generation of replication controller.
+# - The replication controller only support equily based selectors whereas the replication controller works on both i.e filtering according to set of values.
+# - Replicaset rather than replica controller is used by other.

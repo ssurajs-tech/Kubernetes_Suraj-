@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ReplicationController              # This defines to check the object of Replication type
+metadata:
+  name: myreplica
+spec:
+  replicas: 2                             # This element defines the desired number of pods
+  selector:                               # Tells the controller which pods to watch/belongs to this RC.
+    myname: surajs                        # This must match the label
+  template:                               # Templete elements defines to launch a new pod
+    metadata:
+      name: dev_pod                                            
+      labels:                             # Selector values need to match the labels values specified in the pod template.
+        myname: surajs
+    spec:
+      containers:
+        - name: c00
+          image: ubuntu
+          command: ["/bin/bash","-C","while true;do echo 'hello suraj'; sleep 5 ; done"]

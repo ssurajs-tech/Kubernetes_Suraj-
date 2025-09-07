@@ -1,0 +1,39 @@
+# To create a container with the help of yml file.
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: testpod
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo 'Hello suraj'; sleep 5 ; done"]
+  restartPolicy: Never   # Defaults to always
+
+
+
+# Create a pod and container
+# kubectl apply -f pod1.yml
+# Display pod
+# kuebctl get pods
+
+# if you want to see, where exactly pod is running
+
+# kubectl get pods -o wide
+
+# Display pod details
+
+# kubectl describe pod testpod
+
+# #To see logs
+
+# kubectl logs -f pod_name
+
+# #Delete the pod
+
+# kubectl delete pod pod-name
+
+# kubectl delete -f pod1.yml
+
+

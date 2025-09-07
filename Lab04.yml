@@ -1,0 +1,30 @@
+kind: Pod
+apiversion: v1
+metadata:
+  name: pod
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo 'Hello suraj'; sleep 5 ; done"]
+      env:
+        - name: myname
+          value: suraj
+
+# kubectl apply -f pod3.yml
+
+# kubectl get pods
+
+# kubectl get pod pod
+
+# kubectl describe pod pod
+
+# kubectl exec pod -it -c c00 -- /bin/bash
+
+# env
+
+# echo $myname
+
+# exit
+
+# kubectl delete -f pod3.yml

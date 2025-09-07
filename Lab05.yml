@@ -1,0 +1,23 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pods
+spec:
+  containers:
+    - name: c00
+      image: nginx
+      ports:
+      - containerPort: 80
+
+
+# kubectl apply -f pod4.yml
+
+# kubectl get pods
+
+# kubectl get pods -o wide
+
+# curl 172.17.3.90
+
+# kubectl delete -f pod4.yml
+
+# kubectl get pods

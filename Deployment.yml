@@ -1,0 +1,54 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeployments
+spec:
+  replicas: 2
+  selector:    
+    matchLabels:
+      name: deployment
+  template:
+    metadata:
+      name: testpod
+      labels:
+        name: deployment
+    spec:
+      containers:
+        - name: c00
+          image: ubuntu
+          command: ["/bin/bash", "-c", "while true; do echo Technical-Guftgu; sleep 5; done"]
+
+# Install ubuntu
+
+# sudo su -
+
+# vi deploy.yaml
+
+# kubectl apply -f deploy.yaml
+
+# kubectl get pods
+
+# kubectl describe mydeployments
+
+# kubectl get rs
+
+# kubectl get pods
+
+# kubectl delete pod pod_name
+
+# kubectl get pods
+
+# kubectl get rs
+
+# kubectl scale --replicas=1 deploy mydeployments
+
+# kubectl scale --replicas=3 deploy mydeployments
+
+# kubectl get deploy
+
+# kubectl get rs
+
+# kubectl get pods
+
+# kubectl logs -f pod_name

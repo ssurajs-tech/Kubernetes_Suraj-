@@ -1,0 +1,44 @@
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: testpod
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo 'Hello suraj'; sleep 5 ; done"]
+    - name: c01
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo 'Hello suraj'; sleep 5 ; done"]
+
+
+# kubectl apply -f po2.myl
+
+# kuebctl get pods
+
+# kubectl get pod pod1
+
+# kubectl describe pod pod1
+
+# kubectl log -f pod1
+
+# kubectl logs -f pod1 -c c00
+
+# kubectl logs -f pod1 -c c01
+
+# kubectk exec pod1 -it -c c01 -- hostname -f
+
+# kubectl exec pod2 -it -c c02 -- hostname -f
+
+# kubectl exec pod1 -it -c c01 -- /bin/bash
+
+# ps
+
+# ps -ef
+
+# exit
+
+# kubectl delete pod pod1
+
+# kubectl delete -f pod2.yml

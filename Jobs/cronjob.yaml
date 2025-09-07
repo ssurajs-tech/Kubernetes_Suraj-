@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: trupti
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - image: ubuntu
+            name: trupti
+            command: ["/bin/bash", "-c", "echo Technical-Guftgu; sleep 5"]
+          restartPolicy: Never

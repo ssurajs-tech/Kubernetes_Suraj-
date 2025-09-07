@@ -1,0 +1,23 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: testpod
+  annotations:
+    description: "I am surajs and now logging to the pod using this"
+spec:
+  containers:
+    - name: c00
+      image: centos
+      command: ["/bin/bash", "-c", "while true; do echo 'Hello suraj'; sleep 5 ; done"]
+  restartpolicy: Never
+
+
+# kubectl apply -f pod1.yml
+
+# kuebctl get pod
+
+# kubectl describe pod testpod
+
+# kubectl delete pod testod
+
+# kubectl delete -f pod1.yml
