@@ -1,4 +1,24 @@
+---
+title: "Kubernetes_Suraj-"
+description: "Notes, labs and examples for Kubernetes"
+layout: default
+permalink: /
+---
+
 # Kubernetes_Suraj-
+
+A concise guide with labs, manifests and examples for learning Kubernetes.
+
+## Table of contents
+- [What is Kubernetes](#what-is-kubernetes)
+- [History](#history)
+- [Installation & Tools](#installation--tools)
+- [Architecture & Concepts](#architecture--concepts)
+- [Labs & Examples](#labs--examples)
+- [Networking, Storage, and Policies](#networking-storage-and-policies)
+- [Resources and Further Reading](#resources-and-further-reading)
+
+<!-- keep the rest of the file unchanged below -->
 
 What is kubernetes :- 
 -------------------
@@ -1841,7 +1861,6 @@ spec:
 
 Service Mesh - Istio (Getaway)
 
-							POD Lifscycle :- 
 							-------------
 
 " Pending --> Running --> succeed --> failed --> Completed --> Unknown "
