@@ -1,0 +1,14 @@
+ubuntu@ip-172-31-33-249:~$ cat nginx.yml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  namespace: nginx
+  labels:
+    app: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    ports:
+    - containerPort: 80   # Expose port 80 inside the container
