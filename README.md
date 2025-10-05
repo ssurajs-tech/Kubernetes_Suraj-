@@ -265,12 +265,30 @@ Node is going to run 3 important pieces of software/process. These 3 components 
 ---
 
 ## [Kubernetes objects](#kubernetes-objects)
-*(See original content for explanations and relationships)*
+	- Kubernetes uses objects to represent the state of the cluster.
+	- What containers application are running.
+	- The Policies and how those application behaves and faults tolerance.
+	- Once you create the object, the Kubernetes system constantly will work to ensure that object exist and maintains cluster desired state.
+	- Every Kubernetes Object includes two nested fields that govern the object config.
+		1. object specification
+		2. object status.
+	- The specification, which we provide, describe your desired state for the object - the characteristics that you want that object to have.
+	- The status describes the actual state of the object and is supplied and updated by the Kubernetes system.
+	- All object are identify by unique name and UID.
 
 ---
 
 ## [Kubernets Objects Management](#kubernets-objects-management)
-*(See original content for imperative vs declarative management)*
+	1. POD
+	2. Service
+	3. Volume
+	4. Namespace
+	5. Replicasets
+	6. Secrets
+	7. ConfigMap
+	8. Deployments
+	9. Job
+	10.Daemonset 
 
 ---
 
