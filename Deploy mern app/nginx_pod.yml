@@ -1,4 +1,4 @@
-ubuntu@ip-172-31-33-249:~$ cat nginx.yml
+
 apiVersion: v1
 kind: Pod
 metadata:
