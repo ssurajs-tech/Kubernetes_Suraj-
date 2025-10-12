@@ -30,6 +30,16 @@ The "event planner" for your containers. When you ask for a container to be run,
 ### Controller Manager
 
 Imagine a bunch of small robots that continuously monitor the cluster to make sure everything is running smoothly. If something goes wrong (e.g., a Pod crashes), they work to fix it, ensuring the cluster state matches your desired state.
+Make sure that actual state of cluster matches the desired state.
+Two possible choices for controller manager:
+				a. If k8s on cloud, then it will be cloud-controller-manager.
+				b. If k8s on non-cloud then it will be kube-controller-manager
+	
+				Components on master that runs controller:-
+		a. Node controller   : for checking with the cloud providers to determine of a node has been detected in the cloud after id stops responding.
+		b. Route controller  : responsible for setting up network, routes on your cloud.
+		c. Service controller: responsible for load balancers on your cloud against services of type load balancers.
+		d. Volume controller : for creating, attaching and mounting volumes and interacting with the cloud provider to orchestrate volume.
 
 ### Cloud Controller Manager
 
